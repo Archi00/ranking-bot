@@ -387,16 +387,20 @@ const runScript = async () => {
   //maybe re-run if idle?
 };
 
-app.get("/", async (req, res) => {
+app.get("/add", async (req, res) => {
   const run = await runScript();
   const time = new Date();
   res.end(`DB UPDATED at ${time}`);
   return run;
 });
 
+app.get("/", (req, res) => {
+  res.write("Awaiting GET request...")
+}
+
 const port = "8080";
 app.listen(port, () =>
   console.log(
-    `server is listening at https://rpuss7.sse.codesandbox.io:${port}/...`
+    `server is listening at https://my-ranking-bot.herokuapp.com/:${port}/...`
   )
 );
