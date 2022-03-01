@@ -395,7 +395,7 @@ app.get("/add", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.end("Hello World");
+  res.write("Hello World");
 });
 
 const port = "8080";
