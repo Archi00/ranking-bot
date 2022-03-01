@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import Web3 from "web3";
 import express from "express";
-import NFTABI from "./NFTABI.json";
+import NFTABI from "./NFTABI.json" assert { type: "json" };
 import { base64decode } from "nodejs-base64";
 
 const FIREBASE_API_KEY = process.env.FIREBASE_KEY;
