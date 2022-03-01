@@ -396,7 +396,7 @@ app.get("/add", async (req, res) => {
 
 app.get("/", (req, res) => {
   res.write("Awaiting GET request...")
-}
+});
 
 const port = "8080";
 app.listen(port, () =>
