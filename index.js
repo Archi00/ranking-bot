@@ -402,6 +402,6 @@ app.get("/", (req, res) => {
 const port = process.env.PORT || "8080";
 app.listen(port, () =>
   console.log(
-    `server is listening at https://my-ranking-bot.herokuapp.com/:${port}/...`
+    `server is listening...`
   )
 );
