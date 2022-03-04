@@ -242,11 +242,10 @@ const getTokens = async (user) => {
           : token.quote;
       })
       .reduce((a, v) => a + v);
-    tokens.totalGained =
-      tokens.tokens
-        .map((token) => (token.gained ? token.gained : 0))
-        .reduce((a, b) => a + b) /
-      tokens.tokens.filter((t) => t.balance !== "0").length;
+    let totalSum = tokens.tokens.filter((t) => t.balance !== "0" && t.gained)
+      .reduce((a, b) => a + b);
+    totalSum = totalSum / tokens.tokens.filter((t) => t.balance !== "0").length;
+    tokens.totalGained = totalSum;
     tokens.updatedAt = txs.data.data.updated_at;
     return tokens;
   } else {
