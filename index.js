@@ -231,8 +231,8 @@ const getTokens = async (user) => {
     tokens.tokens = txs.data.data.items;
     tokens.totalValue = tokens.tokens
       .map((token) => {
-        if (token.quote && token.quote_24h) {
-          token.gained = ((token.quote - token.quote_24h) / token.quote) * 100;
+        if (token.quote_rate && token.quote_rate_24h) {
+          token.gained = ((token.quote_rate - token.quote_rate_24h) / token.quote_rate) * 100;
         }
         return token.quote.toLocaleString("en-US", {
           minimumFractionDigits: 2,
